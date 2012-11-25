@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.dahanne</groupId>
+	<artifactId>spring-for-android-ch4-oauth-google</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>apk</packaging>
+	<name>RecipeApp</name>
+
+	<properties>
+		<spring-android-version>1.0.0.RELEASE</spring-android-version>
+		<jackson-version>1.9.10</jackson-version>
+		<org.springframework.android-version>1.0.0.RELEASE</org.springframework.android-version>
+		<org.springframework.social-version>1.0.2.RELEASE</org.springframework.social-version>
+		<org.springframework.social-google-version>1.0.0.M1</org.springframework.social-google-version>
+		<org.springframework.security-version>3.1.0.RELEASE</org.springframework.security-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<version>4.0.1.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.android</groupId>
+			<artifactId>spring-android-rest-template</artifactId>
+			<version>${spring-android-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-google</artifactId>
+			<version>${org.springframework.social-google-version}</version>
+			<exclusions>
+				<!-- Exclude in favor of Spring Android RestTemplate -->
+				<exclusion>
+					<artifactId>spring-web</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-core</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.android</groupId>
+			<artifactId>spring-android-auth</artifactId>
+			<version>${org.springframework.android-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>${org.springframework.security-version}</version>
+			<exclusions>
+				<!-- Exclude in favor of Spring Android Core -->
+				<exclusion>
+					<artifactId>spring-core</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-core</artifactId>
+			<version>${org.springframework.social-version}</version>
+			<exclusions>
+				<!-- Exclude in favor of Spring Android RestTemplate -->
+				<exclusion>
+					<artifactId>spring-web</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+				<!-- Provided by Android -->
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<version>3.3.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<sdk>
+						<!-- platform or api level (api level 4 = platform 1.6) -->
+						<platform>15</platform>
+					</sdk>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+
+
+		<repository>
+			<id>spring.social.google</id>
+			<name>Spring Social Google</name>
+			<url>https://github.com/GabiAxel/maven/raw/master/</url>
+		</repository>
+
+	</repositories>
+</project>

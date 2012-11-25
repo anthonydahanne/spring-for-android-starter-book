@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerVertical="true"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="87dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="0dip"
+        android:maxWidth="10dip"
+        android:padding="10dip"
+        android:src="@drawable/unknown" />
+
+    <WebView
+        android:id="@+id/text_view_about_me"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dip" />
+    
+    <AbsoluteLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ListView
+            android:id="@+id/google_profile_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </AbsoluteLayout>
+
+</LinearLayout>

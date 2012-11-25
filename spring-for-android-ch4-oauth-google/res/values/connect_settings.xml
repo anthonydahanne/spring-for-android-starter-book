@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google_app_id">508046100884-o6jgcn8e7c1g5gklhc8gibr80ouio8df.apps.googleusercontent.com</string>
+    <string name="google_app_secret">RuUyrF5qoGYWTFm1r_o8Gs4F</string>
+    <string name="google_oauth_callback_url">http://localhost</string>
+    <string name="google_scope">https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me</string>
+</resources>

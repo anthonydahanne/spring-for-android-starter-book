@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Spring For Android Starter OAuth Google Example</string>
+    <string name="title_main">Spring For Android Starter OAuth Google Example</string>
+    <string name="google_description">This activity displays the available options : connect if you\'re not connected; disconnect or profile if you are connected</string>
+</resources>
